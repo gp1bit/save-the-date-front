@@ -28,14 +28,14 @@ export const LoginInput = styled.input`
   border-radius: 10px;
   border: none;
   color: var(--graphite-light);
-  height: 30px;
-  opacity: 0.75;
-  width: 228px;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  padding-left: 15px;
+  height: 30px;
   margin-bottom: 34px;
+  opacity: 0.75;
+  padding-left: 15px;
   transition: filter 0.2s;
+  width: 228px;
 
   &:hover {
     filter: brightness(0.9);
@@ -55,10 +55,10 @@ export const ConcludedButton = styled.button`
   color: var(--white);
   font-family: 'Montserrat', sans-serif;
   font-family: 'Montserrat', sans-serif;
-  font-size: 9.5px;
+  font-size: 10px;
   font-weight: 500;
   height: 30px;
-  margin: 40px 0 30px 0;
+  margin: 10% 0 50% 0;
   width: 95px;
   &:hover {
     filter: brightness(0.8);
@@ -76,6 +76,5 @@ export const Footer = styled.div`
 
 export const PreviousButton = styled.button`
   background-color: var(--blue);
-  border-radius: 10px;
   border: none;
 `;

@@ -86,7 +86,7 @@ export const ConcludedButton = styled.button`
   font-size: 9.5px;
   font-weight: 500;
   height: 30px;
-  margin: 40px 0 30px 0;
+  margin: 15px 0 30px 0;
   width: 95px;
   &:hover {
     filter: brightness(0.8);

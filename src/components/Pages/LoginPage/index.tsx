@@ -1,4 +1,4 @@
-import { LogoLight } from '../../Logo';
+import { LogoLight } from '../../LogoLight';
 import { PreviousImg } from '../../Previous';
 import {
   Container,
@@ -10,7 +10,7 @@ import {
   LoginInput,
 } from './styles';
 import { useHistory } from 'react-router-dom';
-import { ConcludedButton } from '../RegistrationPage/styles';
+import { ConcludedButton } from '../LoginPage/styles';
 
 export function LoginPage() {
   const history = useHistory();
@@ -32,7 +32,10 @@ export function LoginPage() {
           </ConcludedButton>
         </ContainerButton>
         <Footer>
-          <PreviousButton type="button">
+          <PreviousButton
+            type="button"
+            onClick={() => history.push('/landingPage')}
+          >
             <PreviousImg />
           </PreviousButton>
         </Footer>

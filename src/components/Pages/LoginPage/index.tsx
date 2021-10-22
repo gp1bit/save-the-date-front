@@ -1,5 +1,5 @@
 import { LogoLight } from '../../LogoLight';
-import { PreviousImg } from '../../Previous';
+import { PreviousWhite } from '../../PreviousWhite';
 import {
   Container,
   ContainerButton,
@@ -36,7 +36,7 @@ export function LoginPage() {
             type="button"
             onClick={() => history.push('/landingPage')}
           >
-            <PreviousImg />
+            <PreviousWhite />
           </PreviousButton>
         </Footer>
       </Content>

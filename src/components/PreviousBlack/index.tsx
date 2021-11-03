@@ -1,5 +1,6 @@
 import previousBlackImg from '../../assets/previousBlack.svg';
+import { PreviousBlackImg } from './styles';
 
 export function PreviousBlack() {
-  return <img src={previousBlackImg} alt="previous button" />;
+  return <PreviousBlackImg src={previousBlackImg} alt="previous button" />;
 }

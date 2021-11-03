@@ -32,10 +32,7 @@ export function LoginPage() {
           </ConcludedButton>
         </ContainerButton>
         <Footer>
-          <PreviousButton
-            type="button"
-            onClick={() => history.push('/landingPage')}
-          >
+          <PreviousButton type="button" onClick={() => history.push('/')}>
             <PreviousWhite />
           </PreviousButton>
         </Footer>

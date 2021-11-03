@@ -1,5 +1,6 @@
 import previousImg from '../../assets/previous.svg';
+import { PreviousWhiteImg } from './styles';
 
 export function PreviousWhite() {
-  return <img src={previousImg} alt="previoous button" />;
+  return <PreviousWhiteImg src={previousImg} alt="previoous button" />;
 }

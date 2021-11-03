@@ -1,5 +1,6 @@
 import logolightImg from '../../assets/logoClaro.svg';
+import { LogoLightImg } from './styles';
 
 export function LogoLight() {
-  return <img src={logolightImg} alt="save the date" />;
+  return <LogoLightImg src={logolightImg} alt="save the date" />;
 }

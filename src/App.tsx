@@ -24,6 +24,9 @@ import { LandingPage } from './components/Pages/LandingPage';
 import { LoginPage } from './components/Pages/LoginPage';
 import { ProfilePage } from './components/Pages/ProfilePage';
 import { RegistrationPage } from './components/Pages/RegistrationPage';
+import { MyEventsPage } from './components/Pages/MyEvents';
+import { CreateEventPage } from './components/Pages/CreateEventPage';
+import { DetailsEventPage } from './components/Pages/DetailsEventPage';
 
 export function App() {
   return (
@@ -37,13 +40,22 @@ export function App() {
             <Route exact path="/profilePage">
               <ProfilePage />
             </Route>
+            <Route exact path="/detailsEventPage">
+              <DetailsEventPage />
+            </Route>
+            <Route exact path="/createEventPage">
+              <CreateEventPage />
+            </Route>
+            <Route exact path="/myEventsPage">
+              <MyEventsPage />
+            </Route>
             <Route exact path="/homePage">
               <HomePage />
             </Route>
             <Route exact path="/login">
               <LoginPage />
             </Route>
-            <Route exact path="/landingPage">
+            <Route exact path="/">
               <LandingPage />
             </Route>
           </IonRouterOutlet>

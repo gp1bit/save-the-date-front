@@ -1,5 +1,6 @@
 import profileIconBlueImg from '../../assets/profileBlue.svg';
+import { ProfileIconBlueImg } from './styles';
 
 export function ProfileIconBlue() {
-  return <img src={profileIconBlueImg} alt="save the date" />;
+  return <ProfileIconBlueImg src={profileIconBlueImg} alt="save the date" />;
 }

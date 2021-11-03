@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const PreviousWhite = styled.img`
+export const PreviousBlackImg = styled.img`
   max-width: 80px;
 `;

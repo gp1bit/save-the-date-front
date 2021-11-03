@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const LogoLight = styled.img`
+export const LogoLightImg = styled.img`
   max-width: 244px;
 `;

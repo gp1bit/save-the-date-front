@@ -17,9 +17,18 @@ import { PreviousBlack } from '../../PreviousBlack';
 import { IonContent } from '@ionic/react';
 import { CalendarIcon } from '../../CalendarIcon';
 import { ShareIcon } from '../../ShareIcon';
+import Swal from 'sweetalert2';
 
 export function MyEventsPage() {
   const history = useHistory();
+
+  const submit = () => {
+    return Swal.fire({
+      icon: 'success',
+      text: 'Compartilhe seu evento através do link abaixo!',
+      html: '<a href="">Link</a>',
+    });
+  };
 
   return (
     <IonContent>
@@ -40,10 +49,7 @@ export function MyEventsPage() {
                   <h4>Happy Hour</h4>
                   <p>02/12/2021 ás 10h</p>
                 </DivEvento>
-                <ShareButton
-                  type="button"
-                  onClick={() => history.push('/sharePage')}
-                >
+                <ShareButton type="button" onClick={() => submit()}>
                   <ShareIcon />
                 </ShareButton>
               </ContainerElements>

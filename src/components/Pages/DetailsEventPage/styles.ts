@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.header`
   background: var(--white);
   display: flex;
-  height: 100vh;
   flex-direction: column;
 `;
 
@@ -19,16 +18,16 @@ export const Content = styled.div`
 export const ContainerMyEvents = styled.div`
   background: var(--white);
   display: flex;
-  height: 57vh;
   flex-direction: column;
-  margin: 25% 0 10%;
+  height: 80vh;
+  margin: 69.89px 57px 64px 30px;
   width: 100%;
 
   h1 {
-    padding: 0 0 0 6px;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 400;
+    padding: 0 0 0 6px;
   }
 
   .title {
@@ -41,10 +40,9 @@ export const ContainerEvents = styled.div`
   display: flex;
   flex-direction: column;
   height: 160px;
-  /* justify-content: space-between; */
+  height: 32vh;
   margin-top: 11%;
   max-width: 1128px;
-  height: 32vh;
 `;
 
 export const ContainerElements = styled.div`
@@ -52,28 +50,46 @@ export const ContainerElements = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-between;
+  align-items: flex-start;
 `;
 
-export const DivEvento = styled.button`
+export const DivEvento = styled.div`
+  background-color: var(--white);
   border-radius: 5px;
   border: 1px solid var(--graphite);
   display: flex;
   flex-direction: column;
-  height: 75px;
+  height: 100%;
   justify-content: flex-start;
+  margin-left: 13px;
   padding: 0 15px 15px 26px;
-  width: 243px;
-  background-color: var(--white);
+  width: 85%;
 
-  h4 {
+  h3 {
     color: var(--black);
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
   }
+`;
 
-  p {
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 32px;
+`;
+
+export const Input = styled.input`
+  border: none;
+  border-bottom: 1px solid var(--blue);
+  color: var(--black);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  width: 284px;
+  margin-right: 11px;
+
+  ::placeholder {
     color: var(--black);
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
@@ -81,37 +97,59 @@ export const DivEvento = styled.button`
   }
 `;
 
-export const ShareButton = styled.button`
-  background-color: var(--white);
-  border: none;
+export const ItemsContainer = styled.div`
+  margin: 28px 0 8px;
+
+  .inputs-container {
+    display: flex;
+    flex: row;
+  }
 `;
 
-export const ContainerButton = styled.div`
-  padding-top: 64px;
+export const ItemNameContainer = styled.div`
   display: flex;
-  justify-content: center;
-  padding-right: 25px;
+  flex-direction: column;
+  width: 50%;
+
+  h4 {
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
 `;
 
-export const CreateButton = styled.button`
-  background-color: var(--blue);
-  border-radius: 10px;
+export const InputItemsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const InputItem = styled.input`
   border: none;
-  color: var(--white);
+  border-bottom: 1px solid var(--blue);
+  color: var(--black);
   font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-  height: 30px;
+  font-size: 11px;
+  font-weight: 400;
+  margin: 0 5px 11px 0;
   width: 95px;
+
+  ::placeholder {
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+  }
 `;
 
 export const Footer = styled.div`
   display: flex;
   justify-content: flex-start;
-  width: 100%;
-  height: 5vh;
-  margin: 0 5%;
+  align-items: flex-end;
+  margin: 34px 10px 5px 15px;
   padding-bottom: 10px;
+  width: 100%;
 `;
 
 export const PreviousButton = styled.button`

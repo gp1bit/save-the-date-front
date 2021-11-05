@@ -14,13 +14,13 @@ import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { PreviousWhite } from '../../PreviousWhite';
 
-export function ResetPasswordPage() {
+export function NewPasswordPage() {
   const history = useHistory();
 
-  const submitResetPassword = () => {
+  const submitPassword = () => {
     Swal.fire({
       icon: 'success',
-      text: 'Verifique a caixa de entrada do seu e-mail para redefinir sua senha',
+      text: 'Senha redefinida com sucesso!',
     });
 
     history.push('/login');
@@ -33,20 +33,14 @@ export function ResetPasswordPage() {
           <img src={ProfileLight} alt="Ícone de perfil" />
           <Title>
             <h1 className="title">Esqueceu sua senha?</h1>
-            <p className="description">
-              Nos informe seu e-mail de cadastro abaixo
-            </p>
-            <p className="description">
-              para que possamos enviar um link para{' '}
-            </p>
-            <p className="description">redefinição</p>
+            <p className="description">Nos informe uma nova senha abaixo</p>
           </Title>
         </Header>
         <MenuLogin>
-          <InputForm type="text" placeholder="E-mail"></InputForm>
+          <InputForm type="text" placeholder="Nova senha"></InputForm>
         </MenuLogin>
-        <ConcludedButton type="button" onClick={() => submitResetPassword()}>
-          Enviar
+        <ConcludedButton type="button" onClick={() => submitPassword()}>
+          Salvar
         </ConcludedButton>
       </Content>
       <Footer>

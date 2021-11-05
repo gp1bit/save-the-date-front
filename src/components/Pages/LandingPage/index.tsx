@@ -19,12 +19,6 @@ export function LandingPage() {
           >
             Cadastrar-se
           </MenuBtn>
-          <MenuBtn
-            type="button"
-            onClick={() => history.push('/forgotPassword')}
-          >
-            Esqueci minha senha
-          </MenuBtn>
         </HomeMenu>
       </Content>
     </Container>

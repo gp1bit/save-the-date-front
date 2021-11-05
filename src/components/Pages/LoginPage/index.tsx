@@ -11,6 +11,7 @@ import {
 } from './styles';
 import { useHistory } from 'react-router-dom';
 import { ConcludedButton } from '../LoginPage/styles';
+import { ResetPassword } from '../LandingPage/styles';
 
 export function LoginPage() {
   const history = useHistory();
@@ -23,6 +24,12 @@ export function LoginPage() {
           <LoginInput type="text" placeholder="E-mail" />
           <LoginInput type="text" placeholder="Senha" />
         </HomeMenu>
+        <ResetPassword
+          type="button"
+          onClick={() => history.push('/resetPassword')}
+        >
+          <p>Esqueceu sua senha? Clique aqui!</p>
+        </ResetPassword>
         <ContainerButton>
           <ConcludedButton
             type="button"

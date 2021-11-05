@@ -29,6 +29,7 @@ import { CreateEventPage } from './components/Pages/CreateEventPage';
 import { DetailsEventPage } from './components/Pages/DetailsEventPage';
 import { FriendsEventsPage } from './components/Pages/FriendsEventsPage';
 import { DetailsFriendsEvents } from './components/Pages/DetailsFriendsEvents';
+import { ResetPasswordPage } from './components/Pages/ResetPasswordPage';
 
 export function App() {
   return (
@@ -59,6 +60,9 @@ export function App() {
             </Route>
             <Route exact path="/homePage">
               <HomePage />
+            </Route>
+            <Route exact path="/resetPassword">
+              <ResetPasswordPage />
             </Route>
             <Route exact path="/login">
               <LoginPage />

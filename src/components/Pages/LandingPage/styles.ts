@@ -19,7 +19,7 @@ export const HomeMenu = styled.div`
   display: flex;
   flex-direction: column;
   height: 160px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 40%;
   max-width: 1128px;
 `;
@@ -40,4 +40,12 @@ export const MenuBtn = styled.button`
   &:hover {
     filter: brightness(0.9);
   }
+`;
+
+export const ResetPassword = styled.button`
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background-color: var(--blue);
+  border: none;
 `;

@@ -11,9 +11,19 @@ import {
 } from './styles';
 import ProfileLight from '../../../assets/profileLight.svg';
 import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export function RegistrationPage() {
   const history = useHistory();
+
+  const submitRegistration = () => {
+    Swal.fire({
+      icon: 'success',
+      text: 'Cadastro concluído',
+    });
+
+    history.push('/login');
+  };
 
   return (
     <Container>
@@ -37,7 +47,9 @@ export function RegistrationPage() {
           <InputForm type="text" placeholder="Confirme sua senha"></InputForm>
         </MenuLogin>
         <Footer>
-          <ConcludedButton type="button">Concluído</ConcludedButton>
+          <ConcludedButton type="button" onClick={() => submitRegistration()}>
+            Concluído
+          </ConcludedButton>
           <LoginButton type="button" onClick={() => history.push('/login')}>
             Já possui uma conta? Faça o login
           </LoginButton>

@@ -27,6 +27,8 @@ import { RegistrationPage } from './components/Pages/RegistrationPage';
 import { MyEventsPage } from './components/Pages/MyEvents';
 import { CreateEventPage } from './components/Pages/CreateEventPage';
 import { DetailsEventPage } from './components/Pages/DetailsEventPage';
+import { FriendsEventsPage } from './components/Pages/FriendsEventsPage';
+import { DetailsFriendsEvents } from './components/Pages/DetailsFriendsEvents';
 
 export function App() {
   return (
@@ -39,6 +41,12 @@ export function App() {
             </Route>
             <Route exact path="/profilePage">
               <ProfilePage />
+            </Route>
+            <Route exact path="/detailsFriendsEventPage">
+              <DetailsFriendsEvents />
+            </Route>
+            <Route exact path="/friendsEventsPage">
+              <FriendsEventsPage />
             </Route>
             <Route exact path="/detailsEventPage">
               <DetailsEventPage />

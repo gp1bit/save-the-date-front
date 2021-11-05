@@ -120,14 +120,10 @@ export const ItemNameContainer = styled.div`
   }
 `;
 
-export const AddItemButton = styled.button`
-  background: var(--white);
-  border: none;
-`;
-
 export const InputItemsContainer = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 
 export const InputItem = styled.input`
@@ -137,8 +133,9 @@ export const InputItem = styled.input`
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   font-weight: 400;
-  margin: 0 5px 18px 0;
+  margin: 9px 5px 0px 0;
   width: 95px;
+  height: 20px;
 
   ::placeholder {
     color: var(--black);
@@ -146,6 +143,24 @@ export const InputItem = styled.input`
     font-size: 11px;
     font-weight: 400;
   }
+`;
+
+export const ContainerButton = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const SaveButton = styled.button`
+  background-color: var(--graphite);
+  border-radius: 10px;
+  border: none;
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  height: 25px;
+  width: 89px;
+  margin-top: 53px;
 `;
 
 export const Footer = styled.div`

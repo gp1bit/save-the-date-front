@@ -35,9 +35,6 @@ export function HomePage() {
           >
             Eventos de amigos
           </MenuBtn>
-          <MenuBtn type="button" onClick={() => history.push('/schedulePage')}>
-            Cronograma
-          </MenuBtn>
         </HomeMenu>
       </Content>
     </Container>

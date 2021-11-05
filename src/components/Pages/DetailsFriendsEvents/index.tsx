@@ -13,7 +13,8 @@ import {
   ItemNameContainer,
   InputItemsContainer,
   InputItem,
-  AddItemButton,
+  ContainerButton,
+  SaveButton,
 } from './styles';
 import { LogoBlue } from '../../LogoBlue';
 import { useHistory } from 'react-router';
@@ -21,10 +22,8 @@ import { PreviousBlack } from '../../PreviousBlack';
 import { IonContent } from '@ionic/react';
 import { CalendarIcon } from '../../CalendarIcon';
 import { EditItemBlack } from '../../EditItemBlack';
-import { TrashIcon } from '../../TrashIcon';
-import { AddItem } from '../../AddItem';
 
-export function DetailsEventPage() {
+export function DetailsFriendsEvents() {
   const history = useHistory();
 
   return (
@@ -34,20 +33,19 @@ export function DetailsEventPage() {
           <LogoBlue />
           <ContainerMyEvents>
             <div className="Title">
-              <h1>Meus eventos</h1>
+              <h1>Eventos de amigos</h1>
             </div>
             <ContainerEvents>
               <ContainerElements>
                 <CalendarIcon />
                 <DivEvento>
-                  <h3>Happy Hour</h3>
+                  <h3>Churrasco</h3>
                   <InputContainer>
                     <Input
                       type="text"
                       placeholder="Mariana Cavalcante"
                       disabled
                     />
-                    <EditItemBlack />
                   </InputContainer>
 
                   <InputContainer>
@@ -56,22 +54,18 @@ export function DetailsEventPage() {
                       placeholder="Rua Aparecida, 299 - Centro"
                       disabled
                     />
-                    <EditItemBlack />
                   </InputContainer>
 
                   <InputContainer>
                     <Input type="text" placeholder="Sorocaba - SP" disabled />
-                    <EditItemBlack />
                   </InputContainer>
 
                   <InputContainer>
                     <Input type="text" placeholder="02/12/2021" disabled />
-                    <EditItemBlack />
                   </InputContainer>
 
                   <InputContainer>
                     <Input type="text" placeholder="10:00 - 15:00" disabled />
-                    <EditItemBlack />
                   </InputContainer>
 
                   <ItemsContainer>
@@ -82,45 +76,48 @@ export function DetailsEventPage() {
                         <InputItemsContainer>
                           <InputItem
                             type="text"
-                            placeholder="Coca-cola"
+                            placeholder="Linguiça"
                             disabled
                           />
                         </InputItemsContainer>
 
                         <InputItemsContainer>
-                          <InputItem type="text" placeholder="Bolo" disabled />
-                        </InputItemsContainer>
-
-                        <InputItemsContainer>
-                          <AddItemButton
-                            type="button"
-                            onClick={() => history.push('/myEventsPage')}
-                          >
-                            <AddItem />
-                          </AddItemButton>
+                          <InputItem
+                            type="text"
+                            placeholder="Refrigerante"
+                            disabled
+                          />
                         </InputItemsContainer>
                       </ItemNameContainer>
 
                       <ItemNameContainer>
                         <h4>Responsável</h4>
                         <InputItemsContainer>
-                          <InputItem type="text" placeholder="Huddy" disabled />
-                          <TrashIcon />
+                          <InputItem
+                            type="text"
+                            placeholder="João Alves"
+                            disabled
+                          />
                         </InputItemsContainer>
 
                         <InputItemsContainer>
                           <InputItem
                             type="text"
-                            placeholder="Mariana C"
+                            placeholder="Sem responsável"
                             disabled
                           />
-                          <TrashIcon />
+                          <EditItemBlack />
                         </InputItemsContainer>
                       </ItemNameContainer>
                     </div>
                   </ItemsContainer>
                 </DivEvento>
               </ContainerElements>
+              <ContainerButton>
+                <SaveButton type="button" onClick={() => history.push('/')}>
+                  Salvar
+                </SaveButton>
+              </ContainerButton>
             </ContainerEvents>
           </ContainerMyEvents>
           <Footer>

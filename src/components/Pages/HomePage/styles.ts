@@ -35,7 +35,7 @@ export const HomeMenu = styled.div`
   display: flex;
   flex-direction: column;
   height: 160px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 40%;
   max-width: 1128px;
 `;

@@ -17,10 +17,15 @@ export const Content = styled.div`
 `;
 
 export const Header = styled.header`
+  align-items: center;
   display: flex;
   flex-direction: row;
   margin: 90px 0 0 23px;
   width: 100%;
+
+  @media (min-width: 700px) {
+    margin: 20px 0 0 0px;
+  }
 `;
 
 export const Title = styled.div`
@@ -40,15 +45,63 @@ export const Title = styled.div`
     font-size: 11px;
     font-weight: 400;
   }
+
+  @media (min-width: 700px) {
+    margin: 0 0 0px 20px;
+
+    .title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .description {
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    margin: 0 0 0px 30px;
+
+    .title {
+      font-size: 18px;
+    }
+
+    .description {
+      font-size: 17px;
+    }
+  }
+
+  @media (min-width: 1800px) {
+    margin: 0 0 0px 40px;
+
+    .title {
+      font-size: 21px;
+    }
+
+    .description {
+      font-size: 20px;
+    }
+  }
 `;
 
-export const MenuLogin = styled.div`
+export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 20%;
   justify-content: space-between;
   margin-top: 20%;
   max-width: 1128px;
+
+  @media (min-width: 700px) {
+    width: 100%;
+    align-items: center;
+    margin-top: 10%;
+  }
+
+  @media (min-width: 1500px) {
+    align-items: center;
+    margin-top: 12%;
+  }
 `;
 
 export const InputForm = styled.input`
@@ -64,6 +117,23 @@ export const InputForm = styled.input`
   width: 228px;
   &:hover {
     filter: brightness(0.8);
+  }
+
+  @media (min-width: 700px) {
+    width: 307px;
+    font-size: 14px;
+  }
+
+  @media (min-width: 1500px) {
+    height: 30px;
+    width: 407px;
+    font-size: 15px;
+  }
+
+  @media (min-width: 1800px) {
+    height: 35px;
+    width: 507px;
+    font-size: 16px;
   }
 `;
 
@@ -91,6 +161,26 @@ export const ConcludedButton = styled.button`
   &:hover {
     filter: brightness(0.8);
   }
+
+  @media (min-width: 700px) {
+    height: 35px;
+    font-size: 11px;
+    margin: 10px 0 20px 0;
+  }
+
+  @media (min-width: 1500px) {
+    height: 40px;
+    width: 100px;
+    font-size: 12px;
+    margin: 10px 0 40px 0;
+  }
+
+  @media (min-width: 1800px) {
+    height: 50px;
+    width: 105px;
+    font-size: 13px;
+    margin: 25px 0 40px 0;
+  }
 `;
 
 export const LoginButton = styled.button`
@@ -105,5 +195,14 @@ export const LoginButton = styled.button`
   width: 240px;
   &:hover {
     filter: brightness(0.8);
+  }
+
+  @media (min-width: 1500px) {
+    font-size: 15px;
+    width: 340px;
+  }
+
+  @media (min-width: 1800px) {
+    font-size: 16px;
   }
 `;

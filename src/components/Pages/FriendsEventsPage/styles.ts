@@ -14,6 +14,17 @@ export const Content = styled.div`
   margin: 0 20px 0 40px;
   max-width: 1128px;
   padding-top: 33%;
+
+  @media (min-width: 700px) {
+    max-width: none;
+    padding-top: 80px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1800px) {
+    padding-top: 124px;
+  }
 `;
 
 export const ContainerMyEvents = styled.div`
@@ -35,6 +46,32 @@ export const ContainerMyEvents = styled.div`
     display: flex;
     justify-content: flex-start;
   }
+
+  @media (min-width: 700px) {
+    margin: 60px 0 0px;
+    width: 100%;
+    align-items: center;
+
+    h1 {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    margin: 75px 0 30px;
+
+    h1 {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 1800px) {
+    margin: 75px 0 0px;
+
+    h1 {
+      font-size: 20px;
+    }
+  }
 `;
 
 export const ContainerEvents = styled.div`
@@ -44,6 +81,18 @@ export const ContainerEvents = styled.div`
   margin-top: 11%;
   max-width: 1128px;
   height: 32vh;
+
+  @media (min-width: 700px) {
+    margin-top: 60px;
+  }
+
+  @media (min-width: 1500px) {
+    margin-top: 70px;
+  }
+
+  @media (min-width: 1800px) {
+    margin-top: 80px;
+  }
 `;
 
 export const ContainerElements = styled.div`
@@ -52,6 +101,11 @@ export const ContainerElements = styled.div`
   flex-direction: row;
   width: 100%;
   justify-content: center;
+
+  @media (min-width: 700px) {
+    justify-content: center;
+    margin: 0 10px;
+  }
 `;
 
 export const DivEvento = styled.button`
@@ -79,6 +133,48 @@ export const DivEvento = styled.button`
     font-size: 11px;
     font-weight: 400;
     padding-bottom: 5px;
+  }
+
+  @media (min-width: 700px) {
+    margin: 0 26px;
+    height: 77px;
+    width: 243px;
+
+    h4 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    margin: 0 27px;
+    height: 79px;
+    width: 300px;
+
+    h4 {
+      font-size: 15px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  @media (min-width: 1800px) {
+    margin: 0 28px;
+    height: 82px;
+    width: 340px;
+
+    h4 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 14px;
+    }
   }
 `;
 

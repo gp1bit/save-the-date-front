@@ -14,6 +14,14 @@ export const Content = styled.div`
   margin: 0 auto;
   max-width: 1128px;
   padding-top: 33%;
+
+  @media (min-width: 700px) {
+    padding-top: 80px;
+  }
+
+  @media (min-width: 1800px) {
+    padding-top: 134px;
+  }
 `;
 
 export const ContainerProfile = styled.div`
@@ -30,6 +38,30 @@ export const ContainerProfile = styled.div`
     font-size: 14px;
     font-weight: 400;
   }
+
+  @media (min-width: 700px) {
+    margin: 40px 0 10px;
+
+    h1 {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    margin: 50px 0 53px;
+
+    h1 {
+      font-size: 17px;
+    }
+  }
+
+  @media (min-width: 1800px) {
+    margin: 47px 0 53px;
+
+    h1 {
+      font-size: 19px;
+    }
+  }
 `;
 
 export const ContainerInputs = styled.div`
@@ -40,6 +72,10 @@ export const ContainerInputs = styled.div`
   margin-top: 11%;
   max-width: 1128px;
   height: 32vh;
+
+  @media (min-width: 700px) {
+    margin-top: 27px;
+  }
 `;
 
 export const ContainerElements = styled.div`
@@ -60,11 +96,41 @@ export const Input = styled.input`
   width: 293px;
   margin-right: 3%;
 
-  &placeholder {
+  ::placeholder {
     color: var(--black);
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     font-weight: 400;
+  }
+
+  @media (min-width: 700px) {
+    height: 25px;
+    width: 393px;
+    font-size: 11px;
+
+    ::placeholder {
+      font-size: 11px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    height: 30px;
+    width: 493px;
+    font-size: 12px;
+
+    ::placeholder {
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 1800px) {
+    height: 35px;
+    width: 593px;
+    font-size: 13px;
+
+    ::placeholder {
+      font-size: 13px;
+    }
   }
 `;
 

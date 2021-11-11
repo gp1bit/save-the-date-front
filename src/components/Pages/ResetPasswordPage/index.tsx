@@ -9,10 +9,10 @@ import {
   InputForm,
   PreviousButton,
 } from './styles';
-import ProfileLight from '../../../assets/profileLight.svg';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { PreviousWhite } from '../../PreviousWhite';
+import { ProfileIcon } from '../../ProfileIcon';
 
 export function ResetPasswordPage() {
   const history = useHistory();
@@ -30,7 +30,7 @@ export function ResetPasswordPage() {
     <Container>
       <Content>
         <Header>
-          <img src={ProfileLight} alt="Ícone de perfil" />
+          <ProfileIcon />
           <Title>
             <h1 className="title">Esqueceu sua senha?</h1>
             <p className="description">

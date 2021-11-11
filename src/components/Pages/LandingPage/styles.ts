@@ -13,6 +13,18 @@ export const Content = styled.div`
   margin: 0 auto;
   max-width: 1128px;
   padding-top: 55%;
+
+  @media (min-width: 700px) {
+    padding-top: 124px;
+  }
+
+  @media (min-width: 1500px) {
+    padding-top: 184px;
+  }
+
+  @media (min-width: 1800px) {
+    padding-top: 244px;
+  }
 `;
 
 export const HomeMenu = styled.div`
@@ -22,6 +34,23 @@ export const HomeMenu = styled.div`
   justify-content: space-evenly;
   margin-top: 40%;
   max-width: 1128px;
+
+  @media (min-width: 700px) {
+    justify-content: space-around;
+    margin-top: 25%;
+  }
+
+  @media (min-width: 1500px) {
+    height: 200px;
+    justify-content: space-around;
+    margin-top: 22%;
+  }
+
+  @media (min-width: 1800px) {
+    justify-content: space-around;
+    height: 233px;
+    margin-top: 30%;
+  }
 `;
 
 export const MenuBtn = styled.button`
@@ -40,6 +69,24 @@ export const MenuBtn = styled.button`
   &:hover {
     filter: brightness(0.9);
   }
+
+  @media (min-width: 700px) {
+    height: 35px;
+    font-size: 15px;
+    width: 350px;
+  }
+
+  @media (min-width: 1500px) {
+    height: 40px;
+    font-size: 18px;
+    width: 450px;
+  }
+
+  @media (min-width: 1800px) {
+    height: 50px;
+    font-size: 20px;
+    width: 550px;
+  }
 `;
 
 export const ResetPassword = styled.button`
@@ -48,4 +95,16 @@ export const ResetPassword = styled.button`
   color: white;
   background-color: var(--blue);
   border: none;
+
+  @media (min-width: 700px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 1500px) {
+    font-size: 15px;
+  }
+
+  @media (min-width: 1800px) {
+    font-size: 18px;
+  }
 `;

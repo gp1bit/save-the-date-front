@@ -38,12 +38,12 @@ export function LoginPage() {
             Entrar
           </ConcludedButton>
         </ContainerButton>
-        <Footer>
-          <PreviousButton type="button" onClick={() => history.push('/')}>
-            <PreviousWhite />
-          </PreviousButton>
-        </Footer>
       </Content>
+      <Footer>
+        <PreviousButton type="button" onClick={() => history.push('/')}>
+          <PreviousWhite />
+        </PreviousButton>
+      </Footer>
     </Container>
   );
 }

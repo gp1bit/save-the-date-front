@@ -14,6 +14,8 @@ import {
   InputItemsContainer,
   InputItem,
   AddItemButton,
+  ContainerButton,
+  CreateButton,
 } from './styles';
 import { LogoBlue } from '../../LogoBlue';
 import { useHistory } from 'react-router';
@@ -75,10 +77,10 @@ export function DetailsEventPage() {
                   </InputContainer>
 
                   <ItemsContainer>
-                    <h3>Itens</h3>
+                    <h4>Itens</h4>
                     <div className="inputs-container">
                       <ItemNameContainer>
-                        <h4>Nome</h4>
+                        <h3>Nome</h3>
                         <InputItemsContainer>
                           <InputItem
                             type="text"
@@ -102,7 +104,7 @@ export function DetailsEventPage() {
                       </ItemNameContainer>
 
                       <ItemNameContainer>
-                        <h4>Responsável</h4>
+                        <h3>Responsável</h3>
                         <InputItemsContainer>
                           <InputItem type="text" placeholder="Huddy" disabled />
                           <TrashIcon />
@@ -118,20 +120,28 @@ export function DetailsEventPage() {
                         </InputItemsContainer>
                       </ItemNameContainer>
                     </div>
+                    <ContainerButton>
+                      <CreateButton
+                        type="button"
+                        onClick={() => history.push('/')}
+                      >
+                        Concluído
+                      </CreateButton>
+                    </ContainerButton>
                   </ItemsContainer>
                 </DivEvento>
               </ContainerElements>
             </ContainerEvents>
           </ContainerMyEvents>
-          <Footer>
-            <PreviousButton
-              type="button"
-              onClick={() => history.push('/myEventsPage')}
-            >
-              <PreviousBlack />
-            </PreviousButton>
-          </Footer>
         </Content>
+        <Footer>
+          <PreviousButton
+            type="button"
+            onClick={() => history.push('/myEventsPage')}
+          >
+            <PreviousBlack />
+          </PreviousButton>
+        </Footer>
       </Container>
     </IonContent>
   );

@@ -14,7 +14,7 @@ import {
   InputItemsContainer,
   InputItem,
   ContainerButton,
-  SaveButton,
+  CreateButton,
 } from './styles';
 import { LogoBlue } from '../../LogoBlue';
 import { useHistory } from 'react-router';
@@ -110,14 +110,17 @@ export function DetailsFriendsEvents() {
                         </InputItemsContainer>
                       </ItemNameContainer>
                     </div>
+                    <ContainerButton>
+                      <CreateButton
+                        type="button"
+                        onClick={() => history.push('/')}
+                      >
+                        Salvar
+                      </CreateButton>
+                    </ContainerButton>
                   </ItemsContainer>
                 </DivEvento>
               </ContainerElements>
-              <ContainerButton>
-                <SaveButton type="button" onClick={() => history.push('/')}>
-                  Salvar
-                </SaveButton>
-              </ContainerButton>
             </ContainerEvents>
           </ContainerMyEvents>
           <Footer>

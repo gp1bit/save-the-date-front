@@ -1,7 +1,7 @@
 import {
   Container,
   Content,
-  MenuLogin,
+  InputContainer,
   Header,
   Title,
   ConcludedButton,
@@ -9,9 +9,9 @@ import {
   LoginButton,
   InputForm,
 } from './styles';
-import ProfileLight from '../../../assets/profileLight.svg';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { ProfileIcon } from '../../ProfileIcon';
 
 export function RegistrationPage() {
   const history = useHistory();
@@ -29,7 +29,7 @@ export function RegistrationPage() {
     <Container>
       <Content>
         <Header>
-          <img src={ProfileLight} alt="Ícone de perfil" />
+          <ProfileIcon />
           <Title>
             <h1 className="title">Crie sua conta</h1>
             <p className="description">
@@ -38,14 +38,14 @@ export function RegistrationPage() {
             <p className="description">de apenas algumas informações ;)</p>
           </Title>
         </Header>
-        <MenuLogin>
+        <InputContainer>
           <InputForm type="text" placeholder="Nome completo"></InputForm>
           <InputForm type="text" placeholder="E-mail"></InputForm>
           <InputForm type="text" placeholder="Data de nascimento"></InputForm>
           <InputForm type="text" placeholder="Telefone"></InputForm>
           <InputForm type="text" placeholder="Senha"></InputForm>
           <InputForm type="text" placeholder="Confirme sua senha"></InputForm>
-        </MenuLogin>
+        </InputContainer>
         <Footer>
           <ConcludedButton type="button" onClick={() => submitRegistration()}>
             Concluído

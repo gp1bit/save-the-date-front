@@ -15,6 +15,18 @@ export const Header = styled.div`
   justify-content: flex-end;
   margin: 8% 5% 0 0;
   max-width: 100%;
+
+  @media (min-width: 700px) {
+    margin: 29px 45px 0 0;
+  }
+
+  @media (min-width: 1500px) {
+    margin: 39px 45px 0 0;
+  }
+
+  @media (min-width: 1800px) {
+    margin: 59px 45px 0 0;
+  }
 `;
 
 export const ProfileButton = styled.button`
@@ -29,6 +41,10 @@ export const Content = styled.div`
   margin: 0 auto;
   max-width: 1128px;
   padding-top: 35%;
+
+  @media (min-width: 700px) {
+    padding-top: 50px;
+  }
 `;
 
 export const HomeMenu = styled.div`
@@ -38,6 +54,18 @@ export const HomeMenu = styled.div`
   justify-content: space-evenly;
   margin-top: 40%;
   max-width: 1128px;
+
+  @media (min-width: 700px) {
+    margin-top: 17%;
+  }
+
+  @media (min-width: 1500px) {
+    margin-top: 22%;
+  }
+
+  @media (min-width: 1800px) {
+    margin-top: 37%;
+  }
 `;
 
 export const MenuBtn = styled.button`
@@ -55,5 +83,25 @@ export const MenuBtn = styled.button`
 
   &:hover {
     filter: brightness(0.9);
+  }
+
+  @media (min-width: 700px) {
+    font-size: 15px;
+    width: 338px;
+    height: 39px;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: 1500px) {
+    font-size: 16px;
+    width: 438px;
+    height: 45px;
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: 1800px) {
+    font-size: 18px;
+    width: 538px;
+    height: 55px;
   }
 `;

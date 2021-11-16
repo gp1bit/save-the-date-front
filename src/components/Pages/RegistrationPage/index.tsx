@@ -12,19 +12,18 @@ import {
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { ProfileIcon } from '../../ProfileIcon';
+import { userValidator } from '../../../services/validations/userValidator';
 
-export function RegistrationPage(props: any) {
+export const RegistrationPage: React.FC<any> = ({ data, onDataChange }) => {
   const history = useHistory();
 
   const submitRegistration = () => {
-    Swal.fire({
-      icon: 'success',
-      text: 'Cadastro concluído',
-    });
-
-    history.push('/login');
-
-    console.log(props.data);
+    if (!userValidator(data, onDataChange)) {
+      return Swal.fire({
+        icon: 'success',
+        text: 'Cadastro concluído',
+      });
+    }
   };
 
   return (
@@ -45,10 +44,10 @@ export function RegistrationPage(props: any) {
             type="text"
             placeholder="Nome completo"
             name="name"
-            value={props?.data?.name || ''}
+            value={data?.name || ''}
             onChange={(event: any) => {
-              props.onDataChange({
-                ...props.data,
+              onDataChange({
+                ...data,
                 name: event.target.value,
               });
             }}
@@ -57,10 +56,10 @@ export function RegistrationPage(props: any) {
             type="text"
             placeholder="E-mail"
             name="email"
-            value={props?.data?.email || ''}
+            value={data?.email || ''}
             onChange={(event: any) => {
-              props.onDataChange({
-                ...props.data,
+              onDataChange({
+                ...data,
                 email: event.target.value,
               });
             }}
@@ -69,10 +68,10 @@ export function RegistrationPage(props: any) {
             type="text"
             placeholder="Data nascimento (DD/MM/AA)"
             name="birthDate"
-            value={props?.data?.birthDate || ''}
+            value={data?.birthDate || ''}
             onChange={(event: any) => {
-              props.onDataChange({
-                ...props.data,
+              onDataChange({
+                ...data,
                 birthDate: event.target.value,
               });
             }}
@@ -81,10 +80,10 @@ export function RegistrationPage(props: any) {
             type="text"
             placeholder="Telefone"
             name="phone"
-            value={props?.data?.phone || ''}
+            value={data?.phone || ''}
             onChange={(event: any) => {
-              props.onDataChange({
-                ...props.data,
+              onDataChange({
+                ...data,
                 phone: event.target.value,
               });
             }}
@@ -93,10 +92,10 @@ export function RegistrationPage(props: any) {
             type="password"
             placeholder="Senha"
             name="password"
-            value={props?.data?.password || ''}
+            value={data?.password || ''}
             onChange={(event: any) => {
-              props.onDataChange({
-                ...props.data,
+              onDataChange({
+                ...data,
                 password: event.target.value,
               });
             }}
@@ -105,17 +104,22 @@ export function RegistrationPage(props: any) {
             type="password"
             placeholder="Confirme sua senha"
             name="checkPassword"
-            value={props?.data?.checkPassword || ''}
+            value={data?.checkPassword || ''}
             onChange={(event: any) => {
-              props.onDataChange({
-                ...props.data,
+              onDataChange({
+                ...data,
                 checkPassword: event.target.value,
               });
             }}
           ></InputForm>
         </InputContainer>
         <Footer>
-          <ConcludedButton type="button" onClick={() => submitRegistration()}>
+          <ConcludedButton
+            type="button"
+            onClick={() => {
+              submitRegistration();
+            }}
+          >
             Concluído
           </ConcludedButton>
           <LoginButton type="button" onClick={() => history.push('/login')}>
@@ -125,4 +129,4 @@ export function RegistrationPage(props: any) {
       </Content>
     </Container>
   );
-}
+};

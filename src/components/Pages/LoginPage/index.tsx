@@ -13,7 +13,7 @@ import { useHistory } from 'react-router-dom';
 import { ConcludedButton } from '../LoginPage/styles';
 import { ResetPassword } from '../LandingPage/styles';
 
-export function LoginPage() {
+export function LoginPage(props: any) {
   const history = useHistory();
 
   return (
@@ -21,8 +21,30 @@ export function LoginPage() {
       <Content>
         <LogoLight />
         <HomeMenu>
-          <LoginInput type="text" placeholder="E-mail" />
-          <LoginInput type="text" placeholder="Senha" />
+          <LoginInput
+            type="text"
+            placeholder="E-mail"
+            name="email"
+            value={props.data.email}
+            onChange={(event: any) => {
+              props.onDataChange({
+                ...props.data,
+                email: event.target.value,
+              });
+            }}
+          />
+          <LoginInput
+            type="text"
+            placeholder="Senha"
+            name="password"
+            value={props?.data?.password || ''}
+            onChange={(event: any) => {
+              props.onDataChange({
+                ...props.data,
+                password: event.target.value,
+              });
+            }}
+          />
         </HomeMenu>
         <ResetPassword
           type="button"

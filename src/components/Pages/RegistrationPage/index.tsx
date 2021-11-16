@@ -13,7 +13,7 @@ import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { ProfileIcon } from '../../ProfileIcon';
 
-export function RegistrationPage() {
+export function RegistrationPage(props: any) {
   const history = useHistory();
 
   const submitRegistration = () => {
@@ -23,6 +23,8 @@ export function RegistrationPage() {
     });
 
     history.push('/login');
+
+    console.log(props.data);
   };
 
   return (
@@ -39,12 +41,78 @@ export function RegistrationPage() {
           </Title>
         </Header>
         <InputContainer>
-          <InputForm type="text" placeholder="Nome completo"></InputForm>
-          <InputForm type="text" placeholder="E-mail"></InputForm>
-          <InputForm type="text" placeholder="Data de nascimento"></InputForm>
-          <InputForm type="text" placeholder="Telefone"></InputForm>
-          <InputForm type="text" placeholder="Senha"></InputForm>
-          <InputForm type="text" placeholder="Confirme sua senha"></InputForm>
+          <InputForm
+            type="text"
+            placeholder="Nome completo"
+            name="name"
+            value={props?.data?.name || ''}
+            onChange={(event: any) => {
+              props.onDataChange({
+                ...props.data,
+                name: event.target.value,
+              });
+            }}
+          ></InputForm>
+          <InputForm
+            type="text"
+            placeholder="E-mail"
+            name="email"
+            value={props?.data?.email || ''}
+            onChange={(event: any) => {
+              props.onDataChange({
+                ...props.data,
+                email: event.target.value,
+              });
+            }}
+          ></InputForm>
+          <InputForm
+            type="text"
+            placeholder="Data nascimento (DD/MM/AA)"
+            name="birthDate"
+            value={props?.data?.birthDate || ''}
+            onChange={(event: any) => {
+              props.onDataChange({
+                ...props.data,
+                birthDate: event.target.value,
+              });
+            }}
+          ></InputForm>
+          <InputForm
+            type="text"
+            placeholder="Telefone"
+            name="phone"
+            value={props?.data?.phone || ''}
+            onChange={(event: any) => {
+              props.onDataChange({
+                ...props.data,
+                phone: event.target.value,
+              });
+            }}
+          ></InputForm>
+          <InputForm
+            type="password"
+            placeholder="Senha"
+            name="password"
+            value={props?.data?.password || ''}
+            onChange={(event: any) => {
+              props.onDataChange({
+                ...props.data,
+                password: event.target.value,
+              });
+            }}
+          ></InputForm>
+          <InputForm
+            type="password"
+            placeholder="Confirme sua senha"
+            name="checkPassword"
+            value={props?.data?.checkPassword || ''}
+            onChange={(event: any) => {
+              props.onDataChange({
+                ...props.data,
+                checkPassword: event.target.value,
+              });
+            }}
+          ></InputForm>
         </InputContainer>
         <Footer>
           <ConcludedButton type="button" onClick={() => submitRegistration()}>

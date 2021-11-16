@@ -7,15 +7,42 @@ import {
   ContainerElements,
   Footer,
   PreviousButton,
+  EditButton,
+  ContainerButton,
+  CreateButton,
 } from './styles';
 import { LogoBlue } from '../../LogoBlue';
 import { EditItemBlue } from '../../EditItemBlue';
 import { useHistory } from 'react-router';
 import { PreviousBlack } from '../../PreviousBlack';
 import { IonContent } from '@ionic/react';
+import Swal from 'sweetalert2';
 
-export function ProfilePage() {
+export function ProfilePage(props: any) {
   const history = useHistory();
+
+  const submitDataProfile = () => {
+    try {
+      Swal.fire({
+        icon: 'success',
+        text: 'Dados alterados!',
+      });
+
+      props.setDisabled({
+        name: true,
+        email: true,
+        senha: true,
+        birthDate: true,
+        phone: true,
+        password: true,
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        text: 'Deu ruim!',
+      });
+    }
+  };
 
   return (
     <IonContent>
@@ -26,30 +53,140 @@ export function ProfilePage() {
             <h1>Meu perfil</h1>
             <ContainerInputs>
               <ContainerElements>
-                <Input type="text" placeholder="Nome completo" />
-                <EditItemBlue />
+                <Input
+                  id="changeName"
+                  type="text"
+                  disabled={props.disabled.name}
+                  placeholder="Nome completo"
+                  name="name"
+                  value={props?.data?.name || ''}
+                  onChange={(event: any) => {
+                    props.onDataChange({
+                      ...props.data,
+                      name: event.target.value,
+                    });
+                  }}
+                />
+
+                <EditButton
+                  onClick={() =>
+                    props.setDisabled({ ...props.disabled, name: false })
+                  }
+                >
+                  <label htmlFor="changeName">
+                    <EditItemBlue />
+                  </label>
+                </EditButton>
               </ContainerElements>
 
               <ContainerElements>
-                <Input type="text" placeholder="E-mail" />
-                <EditItemBlue />
+                <Input
+                  id="changeEmail"
+                  type="text"
+                  disabled={props.disabled.email}
+                  placeholder="E-mail"
+                  name="email"
+                  value={props?.data?.email || ''}
+                  onChange={(event: any) => {
+                    props.onDataChange({
+                      ...props.data,
+                      email: event.target.value,
+                    });
+                  }}
+                />
+                <EditButton
+                  onClick={() =>
+                    props.setDisabled({ ...props.disabled, email: false })
+                  }
+                >
+                  <label htmlFor="changeEmail">
+                    <EditItemBlue />
+                  </label>
+                </EditButton>
               </ContainerElements>
 
               <ContainerElements>
-                <Input type="text" placeholder="Senha" />
-                <EditItemBlue />
+                <Input
+                  id="changePassword"
+                  type="password"
+                  disabled={props.disabled.password}
+                  placeholder="Senha"
+                  value={props?.data?.password || ''}
+                  onChange={(event: any) => {
+                    props.onDataChange({
+                      ...props.data,
+                      password: event.target.value,
+                    });
+                  }}
+                />
+                <EditButton
+                  onClick={() =>
+                    props.setDisabled({ ...props.disabled, password: false })
+                  }
+                >
+                  <label htmlFor="changePassword">
+                    <EditItemBlue />
+                  </label>
+                </EditButton>
               </ContainerElements>
 
               <ContainerElements>
-                <Input type="text" placeholder="Data de nascimento" />
-                <EditItemBlue />
+                <Input
+                  id="changeBirthDate"
+                  type="text"
+                  disabled={props.disabled.birthDate}
+                  placeholder="Data de nascimento"
+                  name="birthDate"
+                  value={props?.data?.birthDate || ''}
+                  onChange={(event: any) => {
+                    props.onDataChange({
+                      ...props.data,
+                      birthDate: event.target.value,
+                    });
+                  }}
+                />
+                <EditButton
+                  onClick={() =>
+                    props.setDisabled({ ...props.disabled, birthDate: false })
+                  }
+                >
+                  <label htmlFor="changeBirthDate">
+                    <EditItemBlue />
+                  </label>
+                </EditButton>
               </ContainerElements>
 
               <ContainerElements>
-                <Input type="text" placeholder="Contato" />
-                <EditItemBlue />
+                <Input
+                  id="changePhone"
+                  type="text"
+                  disabled={props.disabled.phone}
+                  placeholder="Contato"
+                  name="phone"
+                  value={props?.data?.phone || ''}
+                  onChange={(event: any) => {
+                    props.onDataChange({
+                      ...props.data,
+                      phone: event.target.value,
+                    });
+                  }}
+                />
+                <EditButton
+                  onClick={() =>
+                    props.setDisabled({ ...props.disabled, phone: false })
+                  }
+                >
+                  <label htmlFor="changePhone">
+                    <EditItemBlue />
+                  </label>
+                </EditButton>
               </ContainerElements>
             </ContainerInputs>
+            <ContainerButton>
+              <CreateButton type="button" onClick={() => submitDataProfile()}>
+                Salvar
+              </CreateButton>
+            </ContainerButton>
           </ContainerProfile>
         </Content>
         <Footer>

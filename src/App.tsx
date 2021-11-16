@@ -31,18 +31,73 @@ import { FriendsEventsPage } from './components/Pages/FriendsEventsPage';
 import { DetailsFriendsEvents } from './components/Pages/DetailsFriendsEvents';
 import { ResetPasswordPage } from './components/Pages/ResetPasswordPage';
 import { NewPasswordPage } from './components/Pages/NewPasswordPage';
+import { useState } from 'react';
 
 export function App() {
+  const [data, setData] = useState<any>({
+    adress: '',
+    birthDate: '',
+    city: '',
+    closingTime: '',
+    date: '',
+    email: '',
+    id: '',
+    itemName: '',
+    name: '',
+    startTime: '',
+    state: '',
+    userId: '',
+    userName: '',
+    phone: '',
+    password: '',
+    checkPassword: '',
+  });
+
+  const [disabled, setDisabled] = useState({
+    name: true,
+    email: true,
+    senha: true,
+    birthDate: true,
+    phone: true,
+    password: true,
+  });
+
+  const [items, setItems] = useState<any[]>([]);
+
+  // const newItem = () => {
+  //   setItems([...items, data]);
+  //   setData({
+  //     ...data,
+  //     itemName: '',
+  //   });
+  // };
+
+  // const removeItem = (index: number) => {
+  //   const copyItem = [...items];
+  //   copyItem.splice(index, 1);
+  //   setItems(copyItem);
+  // };
+
   return (
     <IonApp>
       <IonContent>
         <IonReactRouter>
           <IonRouterOutlet>
             <Route exact path="/registrationPage">
-              <RegistrationPage />
+              <RegistrationPage
+                /* @ts-ignore */
+                data={data}
+                onDataChange={setData}
+              />
             </Route>
             <Route exact path="/profilePage">
-              <ProfilePage />
+              <ProfilePage
+                /* @ts-ignore */
+                data={data}
+                onDataChange={setData}
+                disabled={disabled}
+                setDisabled={setDisabled}
+              />
             </Route>
             <Route exact path="/detailsFriendsEventPage">
               <DetailsFriendsEvents />
@@ -63,13 +118,25 @@ export function App() {
               <HomePage />
             </Route>
             <Route exact path="/newPassword">
-              <NewPasswordPage />
+              <NewPasswordPage
+                /* @ts-ignore */
+                data={data}
+                onDataChange={setData}
+              />
             </Route>
             <Route exact path="/resetPassword">
-              <ResetPasswordPage />
+              <ResetPasswordPage
+                /* @ts-ignore */
+                data={data}
+                onDataChange={setData}
+              />
             </Route>
             <Route exact path="/login">
-              <LoginPage />
+              <LoginPage
+                /* @ts-ignore */
+                data={data}
+                onDataChange={setData}
+              />
             </Route>
             <Route exact path="/">
               <LandingPage />

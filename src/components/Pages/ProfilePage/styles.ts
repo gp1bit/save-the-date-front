@@ -84,6 +84,11 @@ export const ContainerElements = styled.div`
   width: 100%;
 `;
 
+export const EditButton = styled.button`
+  background-color: var(--white);
+  border: none;
+`;
+
 export const Input = styled.input`
   border-radius: 5px;
   border: 1px solid var(--gray);
@@ -131,6 +136,54 @@ export const Input = styled.input`
     ::placeholder {
       font-size: 13px;
     }
+  }
+`;
+
+export const ContainerButton = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 43px 25px 0 0;
+
+  @media (min-width: 700px) {
+    padding: 43px 0px 13 0px;
+  }
+
+  @media (min-width: 1500px) {
+    padding: 84px 0 13px 0px;
+  }
+
+  @media (min-width: 1800px) {
+    padding: 94px 0 13px 0px;
+  }
+`;
+
+export const CreateButton = styled.button`
+  background-color: var(--blue);
+  border-radius: 10px;
+  border: none;
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  height: 25px;
+  width: 75px;
+
+  @media (min-width: 700px) {
+    font-size: 11px;
+    height: 30px;
+    width: 90px;
+  }
+
+  @media (min-width: 1500px) {
+    font-size: 13px;
+    height: 35px;
+    width: 100px;
+  }
+
+  @media (min-width: 1800px) {
+    font-size: 14px;
+    height: 40px;
+    width: 110px;
   }
 `;
 

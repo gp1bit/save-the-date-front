@@ -1,5 +1,5 @@
 //Ler e listar usuários
-export interface userData {
+export interface IUserDataResponse {
   id: number;
   name: string;
   email: string;

@@ -11,22 +11,33 @@ import {
   Input,
   ItemsContainer,
   ItemNameContainer,
-  InputItemsContainer,
-  InputItem,
   AddItemButton,
   EventName,
   ContainerButton,
   CreateButton,
 } from './styles';
-import { LogoBlue } from '../../LogoBlue';
+import { LogoBlue } from '../../Icons/LogoBlue';
 import { useHistory } from 'react-router';
-import { PreviousBlack } from '../../PreviousBlack';
+import { PreviousBlack } from '../../Icons/PreviousBlack';
 import { IonContent } from '@ionic/react';
-import { CalendarIcon } from '../../CalendarIcon';
-import { AddItem } from '../../AddItem';
+import { AddItem } from '../../Icons/AddItem';
+import { eventValidator } from '../../../services/validations/eventValidator';
+import Swal from 'sweetalert2';
+import { CalendarIcon } from '../../Icons/CalendarIcon';
+import { NewItem } from '../../NewItem';
+import { InputItemsContainer } from '../../NewItem/styles';
 
-export function CreateEventPage() {
+export const CreateEventPage: React.FC<any> = (props) => {
   const history = useHistory();
+
+  const submitNewEvent = () => {
+    if (!eventValidator(props.data, props.onDataChange)) {
+      return Swal.fire({
+        icon: 'success',
+        text: 'Evento criado com sucesso!',
+      });
+    }
+  };
 
   return (
     <IonContent>
@@ -44,28 +55,87 @@ export function CreateEventPage() {
                   <EventName
                     type="text"
                     placeholder="Insira aqui o nome do evento"
+                    name="eventName"
+                    value={props.data?.partyName || ''}
+                    onChange={(event: any) => {
+                      props.onDataChange({
+                        ...props.data,
+                        partyName: event.target.value,
+                      });
+                    }}
                   ></EventName>
                   <InputContainer>
-                    <Input type="text" placeholder="Nome" />
+                    <Input
+                      type="text"
+                      placeholder="Nome"
+                      name="hostName"
+                      value={props.data?.hostName || ''}
+                      onChange={(event: any) => {
+                        props.onDataChange({
+                          ...props.data,
+                          hostName: event.target.value,
+                        });
+                      }}
+                    />
                   </InputContainer>
 
                   <InputContainer>
-                    <Input type="text" placeholder="Rua, nº - bairro" />
+                    <Input
+                      type="text"
+                      placeholder="Rua, nº - bairro"
+                      name="adress"
+                      value={props.data?.adress || ''}
+                      onChange={(event: any) => {
+                        props.onDataChange({
+                          ...props.data,
+                          adress: event.target.value,
+                        });
+                      }}
+                    />
                   </InputContainer>
 
                   <InputContainer>
-                    <Input type="text" placeholder="Cidade - UF" />
+                    <Input
+                      type="text"
+                      placeholder="Cidade - UF"
+                      name="city"
+                      value={props.data?.city || ''}
+                      onChange={(event: any) => {
+                        props.onDataChange({
+                          ...props.data,
+                          city: event.target.value,
+                        });
+                      }}
+                    />
                   </InputContainer>
 
                   <InputContainer>
-                    <Input type="text" placeholder="Dia/Mês/Ano" />
+                    <Input
+                      type="text"
+                      placeholder="Dia/Mês/Ano"
+                      name="date"
+                      value={props.data?.date || ''}
+                      onChange={(event: any) => {
+                        props.onDataChange({
+                          ...props.data,
+                          date: event.target.value,
+                        });
+                      }}
+                    />
                   </InputContainer>
 
                   <InputContainer>
                     <Input
                       type="text"
                       placeholder="Horário de início e Término"
-                      disabled
+                      name="scheduleEvent"
+                      value={props.data?.scheduleEvent || ''}
+                      onChange={(event: any) => {
+                        props.onDataChange({
+                          ...props.data,
+                          scheduleEvent: event.target.value,
+                        });
+                      }}
                     />
                   </InputContainer>
 
@@ -74,22 +144,19 @@ export function CreateEventPage() {
                     <div className="inputs-container">
                       <ItemNameContainer>
                         <h3>Nome</h3>
-                        <InputItemsContainer>
-                          <InputItem
-                            type="text"
-                            placeholder="Coca-cola"
-                            disabled
+
+                        {props.items.map((item: any, index: number) => (
+                          <NewItem
+                            item={item}
+                            index={index}
+                            removeItem={props.removeItem}
+                            editItem={props.editItem}
                           />
-                        </InputItemsContainer>
-
-                        <InputItemsContainer>
-                          <InputItem type="text" placeholder="Bolo" disabled />
-                        </InputItemsContainer>
-
+                        ))}
                         <InputItemsContainer>
                           <AddItemButton
                             type="button"
-                            onClick={() => history.push('/myEventsPage')}
+                            onClick={() => props.addItem()}
                           >
                             <AddItem />
                           </AddItemButton>
@@ -99,7 +166,7 @@ export function CreateEventPage() {
                     <ContainerButton>
                       <CreateButton
                         type="button"
-                        onClick={() => history.push('/')}
+                        onClick={() => submitNewEvent()}
                       >
                         Concluído
                       </CreateButton>
@@ -121,4 +188,4 @@ export function CreateEventPage() {
       </Container>
     </IonContent>
   );
-}
+};

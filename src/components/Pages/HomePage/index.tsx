@@ -7,8 +7,8 @@ import {
   ProfileButton,
 } from './styles';
 import { useHistory } from 'react-router-dom';
-import { LogoBlue } from '../../LogoBlue';
-import { ProfileIconBlue } from '../../IconProfileBlue';
+import { LogoBlue } from '../../Icons/LogoBlue';
+import { ProfileIconBlue } from '../../Icons/IconProfileBlue';
 
 export function HomePage() {
   const history = useHistory();

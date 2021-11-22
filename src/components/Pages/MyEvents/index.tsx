@@ -11,12 +11,12 @@ import {
   ContainerButton,
   CreateButton,
 } from './styles';
-import { LogoBlue } from '../../LogoBlue';
+import { LogoBlue } from '../../Icons/LogoBlue';
 import { useHistory } from 'react-router';
-import { PreviousBlack } from '../../PreviousBlack';
+import { PreviousBlack } from '../../Icons/PreviousBlack';
 import { IonContent } from '@ionic/react';
-import { CalendarIcon } from '../../CalendarIcon';
-import { ShareIcon } from '../../ShareIcon';
+import { CalendarIcon } from '../../Icons/CalendarIcon';
+import { ShareIcon } from '../../Icons/ShareIcon';
 import Swal from 'sweetalert2';
 
 export function MyEventsPage() {
@@ -44,7 +44,7 @@ export function MyEventsPage() {
                 <CalendarIcon />
                 <DivEvento
                   type="button"
-                  onClick={() => history.push('/detailsEventPage')}
+                  onClick={() => history.push('/detailsEventPage/1')}
                 >
                   <h4>Happy Hour</h4>
                   <p>02/12/2021 ás 10h</p>

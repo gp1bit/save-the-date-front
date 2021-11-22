@@ -1,4 +1,4 @@
-import logolightImg from '../../assets/logoClaro.svg';
+import logolightImg from '../../../assets/logoClaro.svg';
 import { LogoLightImg } from './styles';
 
 export function LogoLight() {

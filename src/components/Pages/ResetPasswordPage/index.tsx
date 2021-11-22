@@ -11,8 +11,8 @@ import {
 } from './styles';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { PreviousWhite } from '../../PreviousWhite';
-import { ProfileIcon } from '../../ProfileIcon';
+import { PreviousWhite } from '../../Icons/PreviousWhite';
+import { ProfileIcon } from '../../Icons/ProfileIcon';
 
 export function ResetPasswordPage() {
   const history = useHistory();

@@ -1,5 +1,5 @@
 //endpoint para login
-export interface login {
+export interface ILoginRequest {
   email: string;
   password: string;
 }

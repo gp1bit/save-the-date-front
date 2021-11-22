@@ -1,4 +1,4 @@
-import profileIconBlueImg from '../../assets/profileBlue.svg';
+import profileIconBlueImg from '../../../assets/profileBlue.svg';
 import { ProfileIconBlueImg } from './styles';
 
 export function ProfileIconBlue() {

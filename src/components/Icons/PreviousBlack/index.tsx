@@ -1,4 +1,4 @@
-import previousBlackImg from '../../assets/previousBlack.svg';
+import previousBlackImg from '../../../assets/previousBlack.svg';
 import { PreviousBlackImg } from './styles';
 
 export function PreviousBlack() {

@@ -1,6 +1,6 @@
 //endpoint de CRUD para eventos, listagem com filtro por host do evento, e convidados e endpoint para adicionar/editar/excluir novos items
-export interface party {
-  eventName: string;
+export interface IPartyRequest {
+  partyName: string;
   hostId: number;
   adress: string;
   city: string;

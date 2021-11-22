@@ -1,4 +1,4 @@
-import logoblueImg from '../../assets/logoEscuro.svg';
+import logoblueImg from '../../../assets/logoEscuro.svg';
 import { LogoBlueImg } from './styles';
 
 export function LogoBlue() {

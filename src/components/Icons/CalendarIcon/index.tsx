@@ -1,4 +1,4 @@
-import calendarIcon from '../../assets/calendar.svg';
+import calendarIcon from '../../../assets/calendar.svg';
 import './styles';
 import { CalendarIconImg } from './styles';
 

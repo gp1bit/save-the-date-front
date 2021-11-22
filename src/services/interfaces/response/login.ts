@@ -1,4 +1,4 @@
 //endpoint de login
-export interface login {
+export interface ILoginResponse {
   token: string;
 }

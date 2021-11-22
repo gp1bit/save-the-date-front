@@ -1,5 +1,5 @@
 //endpoint para definir uma nova senha
-export interface newPassword {
+export interface INewPasswordRequest {
   password: string;
   token: string;
 }

@@ -12,7 +12,7 @@ import {
 import ProfileLight from '../../../assets/profileLight.svg';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { PreviousWhite } from '../../PreviousWhite';
+import { PreviousWhite } from '../../Icons/PreviousWhite';
 
 export function NewPasswordPage() {
   const history = useHistory();

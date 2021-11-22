@@ -1,4 +1,4 @@
-import { LogoLight } from '../../LogoLight';
+import { LogoLight } from '../../Icons/LogoLight';
 import { Container, Content, HomeMenu, MenuBtn } from './styles';
 import { useHistory } from 'react-router-dom';
 

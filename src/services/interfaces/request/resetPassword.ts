@@ -1,4 +1,4 @@
 //endpoint para enviar e-mail de redefinir senha
-export interface resetPassword {
+export interface IResetPasswordRequest {
   email: string;
 }

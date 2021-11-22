@@ -1,4 +1,4 @@
-import addItemIcon from '../../assets/add.svg';
+import addItemIcon from '../../../assets/add.svg';
 import './styles';
 import { AddItemImg } from './styles';
 

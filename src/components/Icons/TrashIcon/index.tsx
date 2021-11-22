@@ -1,4 +1,4 @@
-import trashIcon from '../../assets/trash.svg';
+import trashIcon from '../../../assets/trash.svg';
 import './styles';
 import { TrashIconImg } from './styles';
 

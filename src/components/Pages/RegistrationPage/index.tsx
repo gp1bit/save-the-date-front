@@ -11,7 +11,7 @@ import {
 } from './styles';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { ProfileIcon } from '../../ProfileIcon';
+import { ProfileIcon } from '../../Icons/ProfileIcon';
 import { userValidator } from '../../../services/validations/userValidator';
 
 export const RegistrationPage: React.FC<any> = ({ data, onDataChange }) => {

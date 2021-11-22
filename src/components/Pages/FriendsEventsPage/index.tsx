@@ -8,11 +8,11 @@ import {
   PreviousButton,
   DivEvento,
 } from './styles';
-import { LogoBlue } from '../../LogoBlue';
+import { LogoBlue } from '../../Icons/LogoBlue';
 import { useHistory } from 'react-router';
-import { PreviousBlack } from '../../PreviousBlack';
+import { PreviousBlack } from '../../Icons/PreviousBlack';
 import { IonContent } from '@ionic/react';
-import { CalendarIcon } from '../../CalendarIcon';
+import { CalendarIcon } from '../../Icons/CalendarIcon';
 
 export function FriendsEventsPage() {
   const history = useHistory();

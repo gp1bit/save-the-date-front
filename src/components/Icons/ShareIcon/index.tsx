@@ -1,4 +1,4 @@
-import shareIcon from '../../assets/share.svg';
+import shareIcon from '../../../assets/share.svg';
 import { ShareIconImg } from './styles';
 
 export function ShareIcon() {

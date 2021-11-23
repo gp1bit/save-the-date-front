@@ -38,7 +38,7 @@ export function ProfilePage(props: any) {
     } catch (error) {
       Swal.fire({
         icon: 'error',
-        text: 'Deu ruim!',
+        text: 'Tente novamente!',
       });
     }
   };

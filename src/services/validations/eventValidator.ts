@@ -30,8 +30,19 @@ const scheduleValidation = (scheduleEvent: any): string => {
   return '';
 };
 
-export const eventValidator = (data: any, submitNewEvent: Function) => {
-  const { partyName, hostName, adress, city, date, scheduleEvent } = data;
+const itemNameValidation = (itemName: any, index: number): string => {
+  if (itemName === '') return `Nome do item ${index + 1} é obrigatório`;
+  return '';
+};
+
+export const eventValidator = (
+  data: any,
+  submitNewEvent: Function,
+  items: any
+) => {
+  const { partyName, hostName, adress, city, date, scheduleEvent, itemName } =
+    data;
+
   let errors = [];
   let erro = '';
   erro = partyNameValidation(partyName);
@@ -51,6 +62,11 @@ export const eventValidator = (data: any, submitNewEvent: Function) => {
 
   erro = scheduleValidation(scheduleEvent);
   if (erro) errors.push(erro);
+
+  items.map((item: any, index: number) => {
+    erro = itemNameValidation(item.itemName, index);
+    if (erro) errors.push(erro);
+  });
 
   if (errors.length > 0) {
     return Swal.fire({

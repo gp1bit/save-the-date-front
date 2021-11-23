@@ -10,7 +10,7 @@ export const NewItem: React.FC<any> = (props) => {
         name="itemName"
         value={props.item?.itemName || ''}
         onChange={(event: any) => {
-          props.editItem(props.index, event.target.value);
+          props.editItemName(props.index, event.target.value);
         }}
       />
       {/* @ts-ignore */}

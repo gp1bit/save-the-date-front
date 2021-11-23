@@ -31,7 +31,7 @@ import { FriendsEventsPage } from './components/Pages/FriendsEventsPage';
 import { DetailsFriendsEvents } from './components/Pages/DetailsFriendsEvents';
 import { ResetPasswordPage } from './components/Pages/ResetPasswordPage';
 import { NewPasswordPage } from './components/Pages/NewPasswordPage';
-import { useState, Component } from 'react';
+import { useState } from 'react';
 import { getToken } from './services/api/config';
 
 export function App() {
@@ -66,12 +66,24 @@ export function App() {
   const [items, setItems] = useState<any[]>([]);
 
   const addItem = () => {
-    setItems([...items, { itemName: '' }]);
+    const item = {
+      itemName: '',
+      userId: 0,
+      userName: '',
+    };
+    setItems([...items, item]);
   };
 
-  const editItem = (index: number, itemName: string) => {
+  const editItemName = (index: number, itemName: string) => {
     const copyItem = [...items];
     copyItem[index].itemName = itemName;
+    setItems(copyItem);
+  };
+
+  const editUserFromItem = (index: number, id: number, name: string) => {
+    const copyItem = [...items];
+    copyItem[index].userId = id;
+    copyItem[index].userName = name;
     setItems(copyItem);
   };
 
@@ -79,6 +91,13 @@ export function App() {
     const copyItem = [...items];
     copyItem.splice(index, 1);
 
+    setItems(copyItem);
+  };
+
+  const removeUserFromItem = (index: number, id: number, name: string) => {
+    const copyItem = [...items];
+    copyItem[index].userId = '';
+    copyItem[index].userName = '';
     setItems(copyItem);
   };
 
@@ -166,7 +185,17 @@ export function App() {
                   }}
                 />
               ) : (
-                <DetailsEventPage />
+                <DetailsEventPage
+                  data={data}
+                  onDataChange={setData}
+                  disabled={disabled}
+                  setDisabled={setDisabled}
+                  addItem={addItem}
+                  items={items}
+                  removeUserFromItem={removeUserFromItem}
+                  editItemName={editItemName}
+                  editUserFromItem={editUserFromItem}
+                />
               )}
             </Route>
             <Route exact path="/createEventPage">
@@ -184,7 +213,7 @@ export function App() {
                   addItem={addItem}
                   items={items}
                   removeItem={removeItem}
-                  editItem={editItem}
+                  editItemName={editItemName}
                 />
               )}
             </Route>

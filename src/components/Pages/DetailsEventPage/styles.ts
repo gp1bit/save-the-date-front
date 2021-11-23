@@ -200,14 +200,14 @@ export const ItemsContainer = styled.div`
 
   .inputs-container {
     display: flex;
-    flex: row;
+    flex-direction: column;
   }
 `;
 
 export const ItemNameContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 50%;
+  flex-direction: row;
+  align-items: flex-start;
 
   h3 {
     color: var(--black);
@@ -215,6 +215,7 @@ export const ItemNameContainer = styled.div`
     font-size: 11px;
     font-weight: 400;
     margin-bottom: 25px;
+    width: 48%;
   }
 
   @media (min-width: 700px) {
@@ -238,50 +239,13 @@ export const ItemNameContainer = styled.div`
 
 export const InputItemsContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
-export const InputItem = styled.input`
+export const AddItemButton = styled.button`
+  background: var(--white);
   border: none;
-  border-bottom: 1px solid var(--blue);
-  color: var(--black);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  margin: 0 5px 18px 0;
-  width: 95px;
-
-  ::placeholder {
-    color: var(--black);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-  }
-
-  @media (min-width: 700px) {
-    font-size: 13px;
-    width: 100%;
-
-    ::placeholder {
-      font-size: 13px;
-    }
-  }
-
-  @media (min-width: 1500px) {
-    font-size: 14px;
-
-    ::placeholder {
-      font-size: 14px;
-    }
-  }
-
-  @media (min-width: 1800px) {
-    font-size: 16px;
-
-    ::placeholder {
-      font-size: 16px;
-    }
-  }
 `;
 
 export const ContainerButton = styled.div`
@@ -330,11 +294,6 @@ export const CreateButton = styled.button`
     height: 40px;
     width: 110px;
   }
-`;
-
-export const AddItemButton = styled.button`
-  background: var(--white);
-  border: none;
 `;
 
 export const Footer = styled.div`

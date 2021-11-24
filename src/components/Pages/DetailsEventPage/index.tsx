@@ -101,7 +101,7 @@ export function DetailsEventPage(props: any) {
                       id="changeAdress"
                       type="text"
                       disabled={props.disabled.adress}
-                      placeholder="Rua, nº"
+                      placeholder="Rua, nº - Bairro"
                       name="adress"
                       value={props?.data?.adress || ''}
                       onChange={(event: any) => {

@@ -61,6 +61,7 @@ export function App() {
     birthDate: true,
     phone: true,
     password: true,
+    userName: true,
   });
 
   const [items, setItems] = useState<any[]>([]);
@@ -163,7 +164,17 @@ export function App() {
                   }}
                 />
               ) : (
-                <DetailsFriendsEvents />
+                <DetailsFriendsEvents
+                  /* @ts-ignore */
+                  data={data}
+                  onDataChange={setData}
+                  disabled={disabled}
+                  setDisabled={setDisabled}
+                  addItem={addItem}
+                  items={items}
+                  editItemName={editItemName}
+                  editUserFromItem={editUserFromItem}
+                />
               )}
             </Route>
             <Route exact path="/friendsEventsPage">
@@ -174,7 +185,10 @@ export function App() {
                   }}
                 />
               ) : (
-                <FriendsEventsPage />
+                <FriendsEventsPage
+                  /* @ts-ignore */
+                  data={data}
+                />
               )}
             </Route>
             <Route exact path="/detailsEventPage/:id">

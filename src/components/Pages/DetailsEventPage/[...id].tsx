@@ -217,7 +217,6 @@ export function DetailsEventPage(props: any) {
                     <div className="inputs-container">
                       <ItemNameContainer>
                         <h3>Nome</h3>
-
                         <h3>Responsável</h3>
                       </ItemNameContainer>
                       <InputItemsContainer>
@@ -225,8 +224,9 @@ export function DetailsEventPage(props: any) {
                           <NewItemEventPage
                             item={item}
                             index={index}
-                            removeItem={props.removeItem}
-                            editItem={props.editItem}
+                            removeUserFromItem={props.removeUserFromItem}
+                            editItemName={props.editItemName}
+                            editUserFromItem={props.editUserFromItem}
                           />
                         ))}
                       </InputItemsContainer>

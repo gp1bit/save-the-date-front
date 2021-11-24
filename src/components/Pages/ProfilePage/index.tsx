@@ -18,7 +18,7 @@ import { PreviousBlack } from '../../Icons/PreviousBlack';
 import { IonContent } from '@ionic/react';
 import Swal from 'sweetalert2';
 
-export function ProfilePage(props: any) {
+export function ProfilePage(props: any, data: any, onDataChange: any) {
   const history = useHistory();
 
   const submitDataProfile = () => {

@@ -3,32 +3,19 @@ import {
   Content,
   ContainerEvents,
   ContainerMyEvents,
-  ContainerElements,
   Footer,
   PreviousButton,
-  DivEvento,
-  ShareButton,
-  ContainerButton,
   CreateButton,
+  ContainerButton,
 } from './styles';
 import { LogoBlue } from '../../Icons/LogoBlue';
 import { useHistory } from 'react-router';
 import { PreviousBlack } from '../../Icons/PreviousBlack';
 import { IonContent } from '@ionic/react';
-import { CalendarIcon } from '../../Icons/CalendarIcon';
-import { ShareIcon } from '../../Icons/ShareIcon';
-import Swal from 'sweetalert2';
+import { PreviewMyEvents } from '../../PreviewMyEvents';
 
 export function MyEventsPage() {
   const history = useHistory();
-
-  const submit = () => {
-    return Swal.fire({
-      icon: 'success',
-      text: 'Compartilhe seu evento através do link abaixo!',
-      html: '<a href="">Link</a>',
-    });
-  };
 
   return (
     <IonContent>
@@ -40,19 +27,7 @@ export function MyEventsPage() {
               <h1>Meus eventos</h1>
             </div>
             <ContainerEvents>
-              <ContainerElements>
-                <CalendarIcon />
-                <DivEvento
-                  type="button"
-                  onClick={() => history.push('/detailsEventPage/1')}
-                >
-                  <h4>Happy Hour</h4>
-                  <p>02/12/2021 ás 10h</p>
-                </DivEvento>
-                <ShareButton type="button" onClick={() => submit()}>
-                  <ShareIcon />
-                </ShareButton>
-              </ContainerElements>
+              <PreviewMyEvents />
               <ContainerButton>
                 <CreateButton
                   type="button"

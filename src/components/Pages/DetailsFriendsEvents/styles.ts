@@ -33,7 +33,7 @@ export const ContainerMyEvents = styled.div`
   background: var(--white);
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 100vh;
   margin: 69.89px 57px 64px 30px;
   width: 100%;
 
@@ -200,21 +200,22 @@ export const ItemsContainer = styled.div`
 
   .inputs-container {
     display: flex;
-    flex: row;
+    flex-direction: column;
   }
 `;
 
 export const ItemNameContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 50%;
+  flex-direction: row;
+  align-items: flex-start;
 
-  h4 {
+  h3 {
     color: var(--black);
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     font-weight: 400;
     margin-bottom: 25px;
+    width: 48%;
   }
 
   @media (min-width: 700px) {
@@ -238,52 +239,13 @@ export const ItemNameContainer = styled.div`
 
 export const InputItemsContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
-export const InputItem = styled.input`
+export const AddItemButton = styled.button`
+  background: var(--white);
   border: none;
-  border-bottom: 1px solid var(--blue);
-  color: var(--black);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  margin: 9px 5px 0px 0;
-  width: 95px;
-  height: 20px;
-
-  ::placeholder {
-    color: var(--black);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-  }
-
-  @media (min-width: 700px) {
-    font-size: 13px;
-    width: 90%;
-
-    ::placeholder {
-      font-size: 13px;
-    }
-  }
-
-  @media (min-width: 1500px) {
-    font-size: 14px;
-
-    ::placeholder {
-      font-size: 14px;
-    }
-  }
-
-  @media (min-width: 1800px) {
-    font-size: 16px;
-
-    ::placeholder {
-      font-size: 16px;
-    }
-  }
 `;
 
 export const ContainerButton = styled.div`
@@ -341,6 +303,10 @@ export const Footer = styled.div`
   margin: 34px 10px 5px 15px;
   padding-bottom: 10px;
   width: 100%;
+
+  @media (min-width: 700px) {
+    margin: 50px 10px 5px 15px;
+  }
 `;
 
 export const PreviousButton = styled.button`
